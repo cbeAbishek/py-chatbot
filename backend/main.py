@@ -3,6 +3,8 @@ from flask_cors import CORS  # Import CORS
 import json
 from difflib import get_close_matches
 
+
+app = FastAPI()
 app = Flask(__name__)
 CORS(app, origins=["*"])
   # Enable CORS for all routes
