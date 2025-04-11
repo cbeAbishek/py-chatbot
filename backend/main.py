@@ -7,7 +7,7 @@ from difflib import get_close_matches
 
 app = FastAPI()
 app = Flask(__name__)
-CORS(app, origins=["*"])
+CORS(app, origins=["https://cbeabishek.github.io/py-chatbot/"], supports_credentials=True)  # Enable CORS for the specified origin
   # Enable CORS for all routes
 
 def load_knowledge_base(file_path: str) -> dict:

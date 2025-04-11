@@ -16,7 +16,7 @@ async function sendQuestion() {
   addMessage(question, 'user');
   input.value = '';
 
-  const response = await fetch('http://127.0.0.1:5000/ask', {
+  const response = await fetch('https://py-chatbot-2kx8.onrender.com/ask', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ question: question })
@@ -28,7 +28,7 @@ async function sendQuestion() {
   if (data.answer.includes("Can you teach me?")) {
     const teachAnswer = prompt("Please provide the correct answer:");
     if (teachAnswer) {
-      await fetch('http://127.0.0.1:5000/teach', {
+      await fetch('https://py-chatbot-2kx8.onrender.com/teach', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: question, answer: teachAnswer })
