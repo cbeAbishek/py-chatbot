@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "question": "hi",
+      "answer": "I am a chatbot created to assist you."
+    },
+    {
+      "question": "How can I reset my password?",
+      "answer": "You can reset your password by clicking on 'Forgot Password' on the login page."
+    },
+    {
+      "question": "What services do you offer?",
+      "answer": "We offer a variety of services including customer support, product information, and more."
+    },
+    {
+      "question": "love",
+      "answer": "i love u too"
+    },
+    {
+      "question": "how are you",
+      "answer": "nama eippavem nalam tha nega eippadi irukenga "
+    },
+    {
+      "question": "then?",
+      "answer": "just tell me about your self"
+    }
+  ]
+}

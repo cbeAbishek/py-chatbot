@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen flex flex-col">
+
+  <!-- Title Bar -->
+  <header class="bg-indigo-600 text-white py-4 shadow-lg">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">AI Chatbot</h1>
+      <nav class="hidden md:flex space-x-4">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Contact</a>
+      </nav>
+      <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-indigo-700 text-white p-4">
+      <a href="#" class="block py-2 hover:underline">Home</a>
+      <a href="#" class="block py-2 hover:underline">About</a>
+      <a href="#" class="block py-2 hover:underline">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center">
+    <div
+      class="bg-white shadow-2xl rounded-xl p-6 w-full max-w-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-indigo-200">
+      <h2 class="text-2xl font-semibold mb-4 text-center text-indigo-600">AI Chatbot</h2>
+
+      <div id="chatbox"
+        class="h-auto overflow-y-auto space-y-3 p-2 bg-gray-50 rounded-lg border border-gray-200 mb-4 transition-shadow duration-300 hover:shadow-md">
+        <!-- Chat bubbles will appear here -->
+      </div>
+
+      <div class="flex space-x-2">
+        <input type="text" id="userInput" placeholder="Type your message..."
+          class="flex-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-300 focus:outline-none transition duration-300 hover:shadow-inner hover:border-indigo-400" />
+
+        <button onclick="sendQuestion()" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg 
+                 hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 
+                 hover:shadow-xl transition duration-300 transform hover:scale-105">
+          Send
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm md:text-base">&copy; 2025 AI Chatbot. All rights reserved.</p>
+      <p class="text-xs md:text-sm">Built with ❤️ using Tailwind CSS</p>
+    </div>
+  </footer>
+
+  <script src="./frontend/app.js"></script>
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+
+</html>
