@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from fastapi import FastAPI
 from flask_cors import CORS  # Import CORS
 import json
 from difflib import get_close_matches
